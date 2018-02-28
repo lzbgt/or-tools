@@ -41,9 +41,14 @@ MKDIR_P = tools\mkdir.exe -p
 COPY = copy
 TOUCH = tools\touch.exe
 SED = tools\sed.exe
+WHICH = tools\which.exe
 CMAKE = cmake
 ARCHIVE_EXT = .zip
 FZ_EXE = fzn-or-tools$E
+
+# Force SHELL to cmd.exe
+# cf https://www.gnu.org/software/make/manual/html_node/Choosing-the-Shell.html
+SHELL := $(shell $(WHICH) %COMSPEC%)
 
 # Add some additional macros
 CD = cd
